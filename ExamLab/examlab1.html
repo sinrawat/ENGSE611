@@ -5,18 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>สมัครสมาชิก - ง่ายและเร็ว</title>
 </head>
-<body>
-    <h1>สมัคร</h1>
-    <p>ง่ายและเร็ว</p> <hr><br>
-    <label>
-        <input type="text" placeholder="ชื่อ"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" placeholder="นามสกุล"> <br><br>
-        <input type="text" placeholder="หมายเลขโทรศัพท์มือถือหรืออีเมล"> <br><br>
-        <input type="password" placeholder="รหัสผ่านใหม่">
-    </label>
-    <p>วันเกิด</p>
-    <label>
-        <select name="Date">
+<body bgcolor="#F5F5F5">
+    <table align="center" cellpadding="6" bgcolor="#ffffff">
+        <tr>
+            <td colspan="3"><font face="Tahome" size="5" color="">สมัคร</font></td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td><font face="Tahome" size="2" color="#606770">ง่ายและเร็ว</font></td>
+        </tr>
+        <tr>
+            <td colspan="4"><hr></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="ชื่อ"></td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td><input type="text" placeholder="นามสกุล"></td>
+        </tr>
+        <tr>
+            <td colspan="3"><input size="45%" type="text" placeholder="หมายเลขโทรศัพท์มือถือหรืออีเมล"></td>
+        </tr>
+        <tr>
+            <td colspan="3"><input size="45%" type="password" placeholder="รหัสผ่านใหม่"></td>
+        </tr>
+        <tr>
+            <td><font face="Tahome" size="2" color="#606770">วันเกิด</font></td>
+        </tr>
+        <tr>
+            <td><select name="Date">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -48,8 +64,7 @@
             <option>29</option>
             <option>30</option>
             <option>31</option>
-        </select>
-        <select name="month">
+            </select> &nbsp;<select name="month">
             <option>ม.ค.</option>
             <option>ก.พ.</option>
             <option>มี.ค.</option>
@@ -62,8 +77,7 @@
             <option>ต.ค.</option>
             <option>พ.ย.</option>
             <option>ธ.ค.</option>
-        </select>
-        <select name="year">
+            </select> &nbsp;<select name="year">
             <option>2000</option>
             <option>2001</option>
             <option>2002</option>
@@ -90,17 +104,32 @@
             <option>2023</option>
             <option>2024</option>
             <option>2025</option>
-        </select>
-    </label>
-    <p>เพศ</p>
-    <label>
-        <input type="checkbox" name="หญิง">หญิง
-        <input type="checkbox" name="ชาย">ชาย
-    </label>
-    <p>เมื่อคลิก สมัคร แสดงว่าคุณยอมรับข้อกำหนด นโยบายข้อมูล และ นโยบาย <br>
-        คุกกี้ของเรา คุณอาจได้รับการแจ้งเตือนทาง SMS จากเรา และสามารถเลือก <br>
-        ไม่รับได้ในภายหลัง
-    </p>
-    <input type="button" placeholder="สมัคร">
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td ><font face="Tahome" size="2" color="#606770">เพศ</font></td>
+        </tr>
+        <tr>
+            <td>หญิง</td>
+            <td><input type="radio" name="หญิง">
+            </td>
+            <td>ชาย
+            </td>
+            <td><td><input type="radio" name="ชาย"></td> 
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <font face="Tahome" size="2" color="#606770">เมื่อคลิก สมัคร แสดงว่าคุณยอมรับข้อกำหนด นโยบายข้อมูล และ นโยบาย <br>
+                    คุกกี้ของเรา คุณอาจได้รับการแจ้งเตือนทาง SMS จากเรา และสามารถเลือก<br>ไม่รับได้ในภายหลัง
+                </font></td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center" bgcolor="green">
+                <button>สมัคร</button>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
