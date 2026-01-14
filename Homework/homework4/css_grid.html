@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    min-height: 100vh;
+}
+
+.menu {
+    background: #2f86eb;
+    color: white;
+    padding: 30px 20px;
+}
+
+.menu h2 {
+    margin-bottom: 15px;
+}
+
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.content {
+    background: #f2f2f2;
+    padding: 40px;
+}
+
+.content h2 {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+    <h1>โจทย์ที่ 2: 2-Column Layout ด้วย CSS Grid</h1>
+
+<div class="layout">
+
+    <div class="menu">
+        <h2>เมนู</h2>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="content">
+        <h2>ยินดีต้อนรับ</h2>
+        <p>นี่คือเนื้อหาหลักของเว็บไซต์</p>
+        <p>ลองทดสอบย่อ-ขยายหน้าจอเพื่อดู Responsive Layout</p>
+    </div>
+
+</div>
+</body>
+</html>
