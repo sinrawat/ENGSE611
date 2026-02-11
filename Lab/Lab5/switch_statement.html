@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "Prompt", sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        #codeBox,
+        #outputBox {
+            padding: 15px;
+            border-radius: 10px;
+            background: #1e1e1e;
+            color: #dcdcdc;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+        }
+
+        #outputBox {
+            background: #111;
+            border-left: 4px solid #00d26a;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            background: #00bfff;
+            border: none;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background: #0095d6;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number" id="dayInput" placeholder="1-7" min="1" max="7">
+    <button onclick="convertDay()">แปลงค่า</button>
+    <div id="output">ผลลัพธ์จะแสดงที่นี่...</div>
+    <script>
+        function convertDay() {
+            let day = Number(document.getElementById("dayInput").value);
+            let text = "";
+            switch (day) {
+                case 1:
+                    text = "วันจันทร์";
+                    break;
+                case 2:
+                    text = "วันอังคาร";
+                    break;
+                case 3:
+                    text = "วันพุธ";
+                    break;
+                case 4:
+                    text = "วันพฤหัสบดี";
+                    break;
+                case 5:
+                    text = "วันศุกร์";
+                    break;
+                case 6:
+                    text = "วันเสาร์";
+                    break;
+                case 7:
+                    text = "วันอาทิตย์";
+                    break;
+                default:
+                    text = "!!! กรุณากรอกเลข 1-7 เท่านั้น";
+            }
+
+            document.getElementById("output").textContent = text;
+
+            console.log("เลขที่กรอก:", day); console.log("ชื่อวัน:", text);
+        }
+    </script>
+</body>
+
+</html>

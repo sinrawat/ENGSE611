@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "Prompt", sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        #codeBox,
+        #output {
+            padding: 15px;
+            border-radius: 10px;
+            background: #1e1e1e;
+            color: #dcdcdc;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+        }
+
+        #output {
+            background: #111;
+            border-left: 4px solid #00d26a;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            background: #00bfff;
+            border: none;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background: #0095d6;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>ผลลัพธ์บนหน้าเว็บ: </h3>
+    <div id="output">กำลังรัน...</div>
+    <script>
+        let out = "";
+
+        let fruits = ["Apple", "Banana", "Orange", "Grape", "Lemon"]; 
+        out += "List of fruits\n";
+        console.log("List of fruits");
+
+        for (let i = 0; i < fruits.length; i++) {
+            out += `${i + 1}. ${fruits[i]}\n`;
+            console.log("%d. %s", i + 1, fruits[i]);
+        }
+        out += "\nList of programming languages (reversed)\n";
+        console.log("List of programming languages (reversed)"); 
+
+        let languages = ["GO", "JavaScript", "PHP", "Python", "Ruby"];
+        let count = 1;
+
+        for (let i = languages.length - 1; i >= 0; i--) {
+            out += `${count}. ${languages[i]}\n`;
+            console.log("%d %s", count, languages[i]); 
+            count++;
+        }
+
+        document.getElementById("output").textContent = out;
+    </script>
+</body>
+
+</html>

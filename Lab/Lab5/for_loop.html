@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "Prompt", sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        #codeBox,
+        #output {
+            padding: 15px;
+            border-radius: 10px;
+            background: #1e1e1e;
+            color: #dcdcdc;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+        }
+
+        #output {
+            background: #111;
+            border-left: 4px solid #00d26a;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            background: #00bfff;
+            border: none;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background: #0095d6;
+        }
+    </style>
+</head>
+<body>
+    <h3>ผลลัพธ์บนหน้าเว็บ: </h3>
+    <div id="output">กำลังรัน...</div>
+    <p><strong>หมายเหตุ:</strong> ผลลัพธ์จะถูกแสดงใน <span style="color: red;">Console จริง</span> ด้วย</p>
+</div>
+<script>
+        let output = "";
+
+        for (let i = 0, j = 100; i != j; i += 5, j -= 5) {
+            output += `i = ${i}, j = ${j} \n`;
+            console.log("i = %d, j = %d", i, j);
+        }
+        
+        output += "Loop ended";
+        console.log("Loop ended");
+
+        document.getElementById("output").textContent = output;
+    </script>
+</body>
+</html>

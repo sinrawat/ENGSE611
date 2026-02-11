@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "Prompt", sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        #codeBox,
+        #output {
+            padding: 15px;
+            border-radius: 10px;
+            background: #1e1e1e;
+            color: #dcdcdc;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+        }
+
+        #output {
+            background: #111;
+            border-left: 4px solid #00d26a;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            background: #00bfff;
+            border: none;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background: #0095d6;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>ผลลัพธ์บนหน้าเว็บ: </h3>
+    <div id="output">กำลังรัน...</div>
+    <script>
+        let numbers = [30, 27, 84, 36, 24, 2, 74, 37, 8, 50];
+        let min = numbers[0];
+        let max = numbers[0];
+        let sum = 0;
+
+        for (let i = 1; i < numbers.length; i++) {
+            if (numbers[i] < min) min = numbers[i];
+            if (numbers[i] > max) max = numbers[i];
+        }
+
+        for (let i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+        }
+
+        let avg = sum / numbers.length;
+
+        console.log("Numbers: " + numbers.join(" "));
+        console.log("Min: " + min);
+        console.log("Max: " + max);
+        console.log("Sum: " + sum);
+        console.log("Average: " + avg);
+
+        document.getElementById("output").textContent =
+            "Numbers: " + numbers.join(" ") + "\n" +
+            "Min: " + min + "\n" +
+            "Max: " + max + "\n" +
+            "Sum: " + sum + "\n" +
+            "Average: " + avg;
+    </script>
+</body>
+
+</html>
