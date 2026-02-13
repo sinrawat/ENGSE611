@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Check</title>
+    <style>
+        body {
+            font-family: "Prompt", sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        #codeBox,
+        #output {
+            padding: 15px;
+            border-radius: 10px;
+            background: #1e1e1e;
+            color: #dcdcdc;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+        }
+
+        #output {
+            background: #111;
+            border-left: 4px solid #00d26a;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            background: #00bfff;
+            border: none;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background: #0095d6;
+        }
+    </style>
+</head>
+<body>
+<button onclick="runDemo()">Run Code</button>
+<div id="output"></div>
+<script>
+function runDemo() {
+    const output = [];
+    
+    let score = 88;
+
+    if (score >= 80) {
+        output.push("คะแนนสอบ: " + score);
+        console.log("คะแนนสอบ: " + score);
+        output.push("เกรด: A");
+        console.log("เกรด: A");
+        output.push("ผลสอบ: ผ่าน");
+        console.log("ผลสอบ: ผ่าน");
+    } else if (score >= 70) {
+        output.push("คะแนนสอบ: " + score);
+        console.log("คะแนนสอบ: " + score);
+        output.push("เกรด: B");
+        console.log("เกรด: B");
+        output.push("ผลสอบ: ผ่าน");
+        console.log("ผลสอบ: ผ่าน");
+    } else if (score >= 60) {
+        output.push("คะแนนสอบ: " + score);
+        console.log("คะแนนสอบ: " + score);
+        output.push("เกรด: C");
+        console.log("เกรด: C");
+        output.push("ผลสอบ: ผ่าน");
+        console.log("ผลสอบ: ผ่าน");
+    }else if (score >= 50) {
+        output.push("คะแนนสอบ: " + score);
+        console.log("คะแนนสอบ: " + score);
+        output.push("เกรด: D");
+        console.log("เกรด: D");
+        output.push("ผลสอบ: ผ่าน");
+        console.log("ผลสอบ: ผ่าน");
+    }else if (score < 50) {
+        output.push("คะแนนสอบ: " + score);
+        console.log("คะแนนสอบ: " + score);
+        output.push("เกรด: F");
+        console.log("เกรด: F");
+        output.push("ผลสอบ: ไม่ผ่าน");
+        console.log("ผลสอบ: ไม่ผ่าน");
+    }
+
+    document.getElementById("output").textContent = output.join("\n");
+}
+</script>
+</body>
+</html>

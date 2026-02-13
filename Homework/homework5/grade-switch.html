@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Switch</title>
+    <style>
+        body {
+            font-family: "Prompt", sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        #codeBox,
+        #output {
+            padding: 15px;
+            border-radius: 10px;
+            background: #1e1e1e;
+            color: #dcdcdc;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+        }
+
+        #output {
+            background: #111;
+            border-left: 4px solid #00d26a;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            background: #00bfff;
+            border: none;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background: #0095d6;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="runDemo()">Run Code</button>
+<div id="output"></div>
+<script>
+function runDemo() {
+    const output = [];
+
+    let score = Math.floor(Math.random() * 100) + 1;
+    let text = "";
+    let grade = "";
+    let result = "";
+
+    if (score >= 80) {
+        grade = "A";
+        result = "ผ่าน"
+    } else if (score >= 70) {
+        grade = "B";
+        result = "ผ่าน"
+    } else if (score >= 60) {
+        grade = "C";
+        result = "ผ่าน"
+    }else if (score >= 50) {
+        grade = "D";
+        result = "ผ่าน"
+    }else if (score < 50) {
+        grade = "F";
+        result = "ไม่ผ่าน"
+    }
+    switch (grade) {
+                case "A":
+                    text = "ยอดเยี่ยมมาก";
+                    break;
+                case "B":
+                    text = "ดีมาก รักษามาตรฐานไว้";
+                    break;
+                case "C":
+                    text = "ผ่านเกณฑ์ระดับดี";
+                    break;
+                case "D":
+                    text = "พอใช้ แต่ควรพัฒนาเพิ่ม";
+                    break;
+                case "F":
+                    text = "ต้องลงทะเบียนเรียนใหม่";
+                    break;
+            }
+
+    output.push("คะแนนที่สุ่มได้: " + score);
+    console.log("คะแนนที่สุ่มได้: " + score);
+    output.push("เกรด: " + grade);
+    console.log("เกรด: " + grade);
+    output.push("ผลสอบ: " + result);
+    console.log("ผลสอบ: " + result);
+    output.push("คำอธิบาย: " + text);
+    console.log("คำอธิบาย: " + text);
+
+    document.getElementById("output").textContent = output.join("\n");
+}
+</script>
+</body>
+</html>
