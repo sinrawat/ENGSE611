@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="cart">
+        <strong>My Cart</strong>
+        <p>จํานวนสินค้า: <span id="item-count">0</span></p>
+    </div>
+    <div class="btn-area">
+        <button id="add-iphone" class="btn-iphone">เพิ่ม iPhone</button>
+        <button id="add-macbook" class="btn-mac">เพิ่ม MacBook</button>
+    </div>
+    <script>
+        //ShoppingCart class
+        class ShoppingCart {
+            constructor(element) {
+                this.element = element;
+                this.items = [];
+            }
+            addItem(product) {
+                this.items.push(product);
+                const event = new CustomEvent('itemAdded', {
+                    detail: {
+                        product: product,
+                        total: this.items.length
+                    }
+                });
+                this.element.dispatchEvent(event);
+            }
+        }
+        const cartElement = document.getElementById('cart');
+        const countElement = document.getElementById('item-count');
+        const cart = new ShoppingCart(cartElement);
+        // ฟัง Custom Event
+        cartElement.addEventListener('itemAdded', (e) => {
+            countElement.textContent = e.detail.total;
+        }); console.log("เพิ่มสินค้า:", e.detail.product, "รวม:", e.detail.total);
+        document.getElementById('add-iphone').addEventListener('click', () => { cart.addItem('iPhone'); });
+        document.getElementById('add-macbook').addEventListener('click', () => {
+            cart.addItem('MacBook');
+        });
+    </script>
+</body>
+
+</html>

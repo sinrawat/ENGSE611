@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API</title>
+</head>
+
+<body>
+
+    <button id="loadWeather">โหลดข้อมูลสภาพอากาศ</button>
+    <pre id="result">กดปุ่มเพื่อโหลดข้อมูล...</pre>
+
+    <script>
+
+        const button = document.getElementById("loadWeather");
+        const result = document.getElementById("result");
+
+        button.addEventListener("click", async () => {
+
+            const url =
+                "https://api.open-meteo.com/v1/forecast" +
+                "?latitude=18.869&longitude=99.142" +
+                "&current=temperature_2m,relative_humidity_2m,wind_speed_10m";
+
+            try {
+
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error("ไม่สามารถเชื่อมต่อ API ได้");
+                }
+
+                const data = await response.json();
+
+                const weather = data.current;
+
+                result.textContent =
+                    "สถานที่ : อำเภอดอยสะเก็ด จังหวัดเชียงใหม่\n" +
+                    "อุณหภูมิ : " + weather.temperature_2m + "°C\n" +
+                    "ความชื้น : " + weather.relative_humidity_2m + "%\n" +
+                    "ความเร็วลม : " + weather.wind_speed_10m + " km/h\n" +
+                    "เวลา : " + weather.time;
+
+                console.log(data);
+
+            } catch (error) {
+
+                result.textContent = "เกิดข้อผิดพลาด : " + error.message;
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
